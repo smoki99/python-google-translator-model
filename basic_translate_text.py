@@ -37,7 +37,7 @@ for sentence in sentences:
         continue  # Skip empty lines
 
     # Encode the input sentence and move the tensor to the GPU if available
-    input_enc = tokenizer.encode("translate German to English: " + sentence, return_tensors="pt").to(device)
+    input_enc = tokenizer.encode("translate English to German: " + sentence, return_tensors="pt").to(device)
 
     # Generate the output sequence
     output_enc = model.generate(input_enc, max_new_tokens=4000)
